@@ -1,0 +1,346 @@
+<?xml version="1.0" standalone="yes" ?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl" ?>
+<script>
+<name>plugin.sse.restart.core</name>
+<version>2</version>
+<engineversion>42</engineversion>
+<description>SSE restarts the core task on a given task id</description>
+<arguments>
+<argument index="1" name="task" type="Var/Number" desc="taskiID" />
+</arguments>
+<sourcetext>
+<line linenr="001" indent=""><var>$PageID&#160;=&#160;</var><text>get&#160;global&#160;variable:&#160;name=</text><var>'SSE.PageID'</var></line>
+<line linenr="002" indent=""><text>load&#160;text:&#160;id=</text><var>$PageID</var></line>
+<line linenr="003" indent=""></line>
+<line linenr="004" indent=""><var>$Debug&#160;=&#160;</var><var>[FALSE]</var></line>
+<line linenr="005" indent=""></line>
+<line linenr="006" interruptable="@" indent=""><var>=&#160;</var><text>wait&#160;randomly&#160;from&#160;</text><var>3000</var><text>&#160;to&#160;</text><var>5000</var><text>&#160;ms</text></line>
+<line linenr="007" indent=""></line>
+<line linenr="008" indent=""><var>$settings&#160;=&#160;</var><var>[THIS]&#160;-&gt;</var><text>&#160;get&#160;local&#160;variable:&#160;name=</text><var>'sse.settings'</var></line>
+<line linenr="009" indent=""></line>
+<line linenr="010" indent=""><var>$version&#160;=&#160;</var><text>get&#160;script&#160;version</text></line>
+<line linenr="011" indent=""></line>
+<line linenr="012" indent=""><var>$old.version&#160;=&#160;</var><var>$settings</var><text>[</text><var>0</var><text>]</text></line>
+<line linenr="013" indent=""></line>
+<line linenr="014" indent=""><var>skip&#160;if&#160;not&#160;</var><var>$Debug</var></line>
+<line linenr="015" indent="&#160;"><text>write&#160;to&#160;player&#160;logbook:&#160;printf:&#160;fmt=</text><var>'Starting&#160;new&#160;version&#160;of&#160;core&#160;task:&#160;%s'</var><text>,&#160;</text><var>$version</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var></line>
+<line linenr="016" indent=""></line>
+<line linenr="017" indent=""><var>$settings</var><text>[</text><var>0</var><text>]&#160;=&#160;</text><var>$version</var></line>
+<line linenr="018" indent=""><var>[THIS]&#160;-&gt;</var><text>&#160;set&#160;local&#160;variable:&#160;name=</text><var>'sse.settings'</var><text>&#160;value=</text><var>$settings</var></line>
+<line linenr="019" indent=""></line>
+<line linenr="020" indent=""><var>[THIS]&#160;-&gt;</var><text>&#160;start&#160;task&#160;</text><var>$task</var><text>&#160;with&#160;script&#160;</text><call>plugin.sse.core</call><text>&#160;and&#160;prio&#160;</text><var>0</var><text>:&#160;arg1=</text><var>null</var><text>&#160;arg2=</text><var>null</var><text>&#160;arg3=</text><var>null</var><text>&#160;arg4=</text><var>null</var><text>&#160;arg5=</text><var>null</var></line>
+<line linenr="021" indent=""></line>
+<line linenr="022" indent=""><comment><text>*&#160;</text><var>If&#160;this&#160;is&#160;the&#160;first&#160;restart,&#160;send&#160;Update&#160;Message&#160;to&#160;player</var></comment></line>
+<line linenr="023" indent=""><var>$update.message.sent&#160;=&#160;</var><text>get&#160;global&#160;variable:&#160;name=</text><var>'SSE.Update.Message.Sent'</var></line>
+<line linenr="024" indent=""><var>if&#160;not&#160;</var><var>$update.message.sent</var></line>
+<line linenr="025" indent="&#160;"><var>$version.fmt&#160;=&#160;</var><text>get&#160;global&#160;variable:&#160;name=</text><var>'SSE.Script.Version.Format'</var></line>
+<line linenr="026" indent="&#160;"><var>$old.version.format&#160;=&#160;</var><text>get&#160;global&#160;variable:&#160;name=</text><var>'SSE.Old.Version.Format'</var></line>
+<line linenr="027" indent="&#160;"></line>
+<line linenr="028" indent="&#160;"><var>$old.version&#160;=&#160;</var><text>sprintf:&#160;fmt=</text><var>$old.version.format</var><text>,&#160;</text><var>$old.version</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var></line>
+<line linenr="029" indent="&#160;"><var>$version&#160;=&#160;</var><text>sprintf:&#160;fmt=</text><var>$version.fmt</var><text>,&#160;</text><var>$version</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var></line>
+<line linenr="030" indent="&#160;"></line>
+<line linenr="031" indent="&#160;"><var>$update.message&#160;=&#160;</var><text>sprintf:&#160;pageid=</text><var>$PageID</var><text>&#160;textid=</text><var>3002</var><text>,&#160;</text><var>$old.version</var><text>,&#160;</text><var>$version</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var><text>,&#160;</text><var>null</var></line>
+<line linenr="032" indent="&#160;"><text>send&#160;incoming&#160;message&#160;</text><var>$update.message</var><text>&#160;to&#160;player:&#160;display&#160;it=</text><var>[FALSE]</var></line>
+<line linenr="033" indent="&#160;"><text>set&#160;global&#160;variable:&#160;name=</text><var>'SSE.Update.Message.Sent'</var><text>&#160;value=</text><var>[TRUE]</var></line>
+<line linenr="034" indent=""><text>end</text></line>
+<line linenr="035" indent=""></line>
+<line linenr="036" indent=""><text>return&#160;</text><var>null</var></line>
+</sourcetext>
+<codearray>
+
+<sval type="array" size="10">
+  <sval type="string" val="plugin.sse.restart.core"/>
+  <sval type="int" val="42"/>
+  <sval type="string" val="SSE restarts the core task on a given task id"/>
+  <sval type="int" val="2"/>
+  <sval type="int" val="0"/>
+  <sval type="array" size="10">
+    <sval type="string" val="task"/>
+    <sval type="string" val="PageID"/>
+    <sval type="string" val="Debug"/>
+    <sval type="string" val="settings"/>
+    <sval type="string" val="version"/>
+    <sval type="string" val="old.version"/>
+    <sval type="string" val="update.message.sent"/>
+    <sval type="string" val="version.fmt"/>
+    <sval type="string" val="old.version.format"/>
+    <sval type="string" val="update.message"/>
+  </sval>
+  <sval type="array" size="22">
+    <sval type="array" size="4">
+      <sval type="int" val="158"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="SSE.PageID"/>
+      <sval type="int" val="1"/>
+    </sval>
+    <sval type="array" size="3">
+      <sval type="int" val="151"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="1"/>
+    </sval>
+    <sval type="array" size="7">
+      <sval type="int" val="104"/>
+      <sval type="int" val="2"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="131075"/>
+      <sval type="int" val="9"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="-1"/>
+    </sval>
+    <sval type="array" size="6">
+      <sval type="int" val="107"/>
+      <sval type="int" val="-2147483647"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="3000"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="5000"/>
+    </sval>
+    <sval type="array" size="6">
+      <sval type="int" val="156"/>
+      <sval type="int" val="131075"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="sse.settings"/>
+      <sval type="int" val="3"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="1031"/>
+      <sval type="int" val="4"/>
+    </sval>
+    <sval type="array" size="6">
+      <sval type="int" val="129"/>
+      <sval type="int" val="5"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="3"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="0"/>
+    </sval>
+    <sval type="array" size="7">
+      <sval type="int" val="104"/>
+      <sval type="int" val="-1610610424"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="2"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="-1"/>
+    </sval>
+    <sval type="array" size="13">
+      <sval type="int" val="402"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="Starting new version of core task: %s"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+    </sval>
+    <sval type="array" size="7">
+      <sval type="int" val="130"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="3"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="4"/>
+    </sval>
+    <sval type="array" size="7">
+      <sval type="int" val="155"/>
+      <sval type="int" val="131075"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="sse.settings"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="3"/>
+    </sval>
+    <sval type="array" size="18">
+      <sval type="int" val="1017"/>
+      <sval type="int" val="131075"/>
+      <sval type="int" val="1"/>
+      <sval type="string" val="plugin.sse.core"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+    </sval>
+    <sval type="array" size="4">
+      <sval type="int" val="158"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="SSE.Update.Message.Sent"/>
+      <sval type="int" val="6"/>
+    </sval>
+    <sval type="array" size="7">
+      <sval type="int" val="104"/>
+      <sval type="int" val="-536865532"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="6"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="-1"/>
+    </sval>
+    <sval type="array" size="4">
+      <sval type="int" val="158"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="SSE.Script.Version.Format"/>
+      <sval type="int" val="7"/>
+    </sval>
+    <sval type="array" size="4">
+      <sval type="int" val="158"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="SSE.Old.Version.Format"/>
+      <sval type="int" val="8"/>
+    </sval>
+    <sval type="array" size="14">
+      <sval type="int" val="149"/>
+      <sval type="int" val="5"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="8"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="5"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+    </sval>
+    <sval type="array" size="14">
+      <sval type="int" val="149"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="7"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+    </sval>
+    <sval type="array" size="16">
+      <sval type="int" val="150"/>
+      <sval type="int" val="9"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="1"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="3002"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="5"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="4"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+    </sval>
+    <sval type="array" size="5">
+      <sval type="int" val="203"/>
+      <sval type="int" val="131074"/>
+      <sval type="int" val="9"/>
+      <sval type="int" val="131075"/>
+      <sval type="int" val="9"/>
+    </sval>
+    <sval type="array" size="5">
+      <sval type="int" val="157"/>
+      <sval type="int" val="5"/>
+      <sval type="string" val="SSE.Update.Message.Sent"/>
+      <sval type="int" val="131075"/>
+      <sval type="int" val="10"/>
+    </sval>
+    <sval type="array" size="3">
+      <sval type="int" val="103"/>
+      <sval type="int" val="0"/>
+      <sval type="int" val="0"/>
+    </sval>
+  </sval>
+  <sval type="array" size="1">
+    <sval type="array" size="2">
+      <sval type="int" val="10"/>
+      <sval type="string" val="taskiID"/>
+    </sval>
+  </sval>
+  <sval type="array" size="14">
+    <sval type="array" size="2">
+      <sval type="int" val="2"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="3"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="4"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="5"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="6"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="7"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="9"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="11"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="12"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="3">
+      <sval type="int" val="12"/>
+      <sval type="int" val="1"/>
+      <sval type="string" val="If this is the first restart, send Update Message to player"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="16"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="18"/>
+      <sval type="int" val="2"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="21"/>
+      <sval type="int" val="4"/>
+    </sval>
+    <sval type="array" size="2">
+      <sval type="int" val="21"/>
+      <sval type="int" val="2"/>
+    </sval>
+  </sval>
+  <sval type="int" val="0"/>
+</sval>
+
+</codearray>
+</script>

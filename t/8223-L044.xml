@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<language id="44">
+
+<page id="2008" title="Script Object Commands" descr="0">
+ <t id="1135">COMMAND_STORAGE_EXTENSION</t>
+</page>
+
+<page id="2010" title="Cmd Name" descr="COMMAND_STORAGE_EXTENSION">
+ <t id="1135">\33YStation Storage Extension\33X</t>
+</page>
+
+<page id="2011" title="Cmd Short" descr="short">
+ <t id="1135">StorExt</t>
+</page>
+
+<page id="2022" title="Cmd Desc" descr="">
+ <t id="1135">The Station Storage Extension allows to use the cargo bay of docked ships to extend the stations' storage capacity.\n\nShips that are docked to the station and have it set as their homebase can be turned into storage extensions. They are then used to store wares if the stations' cargo bay usage exceeds a certain amount. If the station runs out of the ware at a later time, the amount stored in the extension ships is used to back it up.</t>
+</page>
+
+<page id="8223" title="Txt Res" descr="">
+
+<t id="100">Station Storage Extension</t>
+<t id="10">The Station Storage Extension allows to use the cargo bay of docked ships to extend the stations' storage capacity.\n\nShips that are docked to the station and have it set as their homebase can be turned into storage extensions. They are then used to store wares if the stations' cargo bay usage exceeds a certain amount. If the station runs out of the ware at a later time, the amount stored in the extension ships is used to back it up.</t>
+
+<t id="1">*****Main Configuration Menu*****</t>
+<t id="1000">Storage Extension</t>
+<t id="1001">\33C%s\33X\n\nDocked extension ships: \33Y%s\33X/%s</t>
+<t id="1002">Load of all extension ships: \33Y%n\33X/%n \(%s%s\)</t>
+<t id="1003">Load of docked extension ships: \33Y%n\33X/%n \(%s%s\)</t>
+<t id="1004">----------------------------------------------------------------------------------</t>
+<t id="1005">-No managed wares-</t>
+<t id="1006">%-23s\33Y%+6s\33X\ \(%+3s%s\)   \33Rmin\33X%+3s%s   \33Gmax\33X%+3s%s</t>
+<t id="1007">Settings</t>
+<t id="1008">Manage Wares</t>
+<t id="1009">Manage Extension Ships</t>
+<t id="1010">Notifications</t>
+<t id="1011">State: %s</t>
+<t id="1012">\33GStart Storage Extension\33X</t>
+<t id="1013">\33GResume Storage Extension\33X</t>
+<t id="1014">\33YSuspend Storage Extension\33X</t>
+<t id="1015">\33RUnload All Wares And Stop\33X</t>
+<t id="1016">\33RTerminate Storage Extension\33X</t>
+<t id="1017">Active</t>
+<t id="1018">Suspended</t>
+<t id="1019">Unload and Stop</t>
+<t id="1020">Not Active</t>
+<t id="1021">Uninstall Station Storage Extension</t>
+<t id="1022">\33RUninstall\33X</t>
+
+<t id="1">*****Manage Wares Menu*****</t>
+<t id="110">Here all wares managed by the Storage Extension are diplayed with their respective properties.\nSelect a managed ware to edit its settings.\nSelect a unmanaged ware to add it to the list of managed wares.</t>
+<t id="1100">Manage Wares</t>
+<t id="1101">Managed Wares</t>
+<t id="1102">-None-</t>
+<t id="1103">%-23s\33Y%+6s\33X\ \(%+3s%s\)   \33Rmin\33X%+3s%s   \33Gmax\33X%+3s%s</t>
+<t id="1104">Unmanaged Wares</t>
+<t id="1105">%-23s\33Y%+6s\33X\ \(%+3s%s\)</t>
+
+<t id="1">*****Ware Settings Menu*****</t>
+<t id="111">Edit the settings by selecting the corresponding menu item.\nYou can assign ships to the ware, in which it will be stored preferably.</t>
+<t id="1110">%s</t>
+<t id="1111">Current Stock: \33Y%s\33X \(%s%\)</t>
+<t id="1112">Desired Stock</t>
+<t id="1113">Min Percentage: %s%</t>
+<t id="1114">Max Percentage: %s%</t>
+<t id="1115">\33RRemove Ware From List\33X</t>
+<t id="1116">Preferred Extension Ships</t>
+<t id="1117">%-25s%-8s%=15s \33Rremove\33X</t>
+<t id="1118">Add Ship...</t>
+<t id="1119">\33R\(away\)\33X</t>
+
+<t id="1">*****Add Preferred Ship Menu*****</t>
+<t id="1120">Select Ship</t>
+<t id="1121">-Any \(removes all preferred ships\)-</t>
+<t id="1122">%-25s%-22s%s</t>
+<t id="1123">\33R\(away\)\33X</t>
+
+<t id="1">*****Manage Extension Ships Menu*****</t>
+<t id="120">Here all ships currently used by the Storage Extension are displayed with their status.\nYou can add ships to the Storage Extension when they are docked at the station and have it set as their homebase.\nAfter a ship has been added to the list, you can undock it again if you wish.</t>
+<t id="1200">Manage Extension Ships</t>
+<t id="1201">Extension Ships</t>
+<t id="1202">-No Extension Ships Registered-</t>
+<t id="1203">%-25s %-8s \33Y%+5s\33X \(%+3s%s\)</t>
+<t id="1204">%-25s %-8s \33Y%+5s\33X \(%+3s%s\)    \33R\(away\)\33X</t>
+<t id="1205">Add Ships</t>
+<t id="1206">-No Ships Available-</t>
+<t id="1207">%-25s %-8s \33Y%+5s\33X \(%+3s%s\)</t>
+
+<t id="1">*****Notifications Menu*****</t>
+<t id="130">You can configure the Storage Extension to notify you of certain events and wether they are announced acoustically.\nYou can be warned if the load of all docked extension ships exceeds a certain limit.\nAdditionally warnings for the load of a ware's preferred ships can be activated.</t>
+<t id="1300">Notifications</t>
+<t id="1301">Notify me when...</t>
+<t id="1302">total load exceeds %s%\11  -  \33Gactive\33X</t>
+<t id="1303">total load exceeds %s%\11  -  \33Rinactive\33X</t>
+<t id="1304">load of preferred ships exceeds %s%\11  -  \33Gactive\33X</t>
+<t id="1305">load of preferred ships exceeds %s%\11  -  \33Rinactive\33X</t>
+<t id="1306">Adjust Critical Levels</t>
+<t id="1307">Total Load: %s%</t>
+<t id="1308">Load of Preferred Ships of a Ware: %s%</t>
+<t id="1309">Acoustical Warnings</t>
+<t id="1310">\33GActivated\33X</t>
+<t id="1311">\33RDeactivated\33X</t>
+
+<t id="1">*****Prompts*****</t>
+<t id="2101">This will remove the Station Storage Extension from the game.\nAll your settings will be lost in the process.\nProceed?</t>
+
+<t id="2111">Enter Minimal Stock Percentage</t>
+<t id="2112">Enter Maximal Stock Percentage</t>
+
+<t id="2301">Enter Critical Level</t>
+
+<t id="1">*****Player Messages*****</t>
+<t id="3001">[author]Station Storage Extension[/author][yellow]Station Storage Extension[/yellow] %s installed successfully.</t>
+<t id="3002">[author]Station Storage Extension[/author][yellow]Station Storage Extension[/yellow]\n\nUpdate of running Storage Extensions from %s to %s successful.</t>
+<t id="3003">[author]Station Storage Extension[/author][yellow]Station Storage Extension[/yellow] %s uninstalled successfully.</t>
+
+<t id="3301">[author]Station Storage Extension[/author][yellow]Station Storage Extension[/yellow]: [red]Warning![/red]\n\nSubject: Your Station [cyan]%s[/cyan]\n\nThe load of all docked extension ships has exceeded the critical level of %s%. According to your wishes you are hereby notified.\nYou can edit the notification settings in the Storage Extension configuration panel.</t>
+<t id="3302">[author]Station Storage Extension[/author][yellow]Station Storage Extension[/yellow]: [red]Warning![/red]\n\nSubject: Your Station [cyan]%s[/cyan]\n\nThe load of the docked extension ships preferably used for %s has exceeded the critical level of %s%. According to your wishes you are hereby notified.\nYou can edit the notification settings in the Storage Extension configuration panel.</t>
+
+<t id="1">*****Default Values*****</t>
+<t id="1">Minimum Cargo Bay Usage %</t>
+<t id="4101">20</t>
+
+<t id="1">Maximum Cargo Bay Usage %</t>
+<t id="4102">80</t>
+
+<t id="1">Notifications Code Explanation:</t>
+<t id="1">2=Acoustic Alert On</t>
+<t id="1">3=Total Usage Warning On</t>
+<t id="1">5=Preferred Ship Usage Warning On</t>
+<t id="1">Multiply the numbers to generate a notification code</t>
+<t id="1">Example:</t>
+<t id="1">Acoustic Alert On, Total Usage Warning On, Preferred Ship Warning Off: 2*3=6</t>
+<t id="1">All On: 2*3*5=30</t>
+<t id="1">All Off: 1</t>
+
+<t id="1">Notifications Code:</t>
+<t id="4201">30</t>
+
+<t id="1">Warning Level Total Cargo Bay Usage</t>
+<t id="4202">90</t>
+
+<t id="1">Warning Level Preferred Ships Cargo Bay Usage</t>
+<t id="4203">90</t>
+
+</page>
+</language>
