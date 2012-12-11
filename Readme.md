@@ -9,25 +9,25 @@ The Station Storage Extension is located in the Station Command Panel. You recog
 Corresponding thread on the Egosoft forums: [[Script][Mar/13/2009]Station Storage Extension](http://forum.egosoft.com/viewtopic.php?t=239414)
 
 ## Minimum Requirements:
-* A station and a docked ship with the station set as its home base.
+- A station and a docked ship with the station set as its home base.
 
 ## Installation:
-* Copy the contents of the `scripts` folder into `X3 TC\scripts`
-* Copy the contents of the `t` folder into `X3 TC\t`
+- Copy the contents of the `scripts` folder into `X3 TC\scripts`
+- Copy the contents of the `t` folder into `X3 TC\t`
 
 ## Update:
-* Copy the contents of the `scripts` folder into `X3 TC\scripts`
-* Copy the contents of the `t` folder into `X3 TC\t`
-* The script will only notify you if it is currently running on a station and has to be restarted (this will be done automatically). However, you can see the current script version in the upper right corner of the main control panel. So there is where you should look to determine whether an update was successful.
+- Copy the contents of the `scripts` folder into `X3 TC\scripts`
+- Copy the contents of the `t` folder into `X3 TC\t`
+- The script will only notify you if it is currently running on a station and has to be restarted (this will be done automatically). However, you can see the current script version in the upper right corner of the main control panel. So there is where you should look to determine whether an update was successful.
 
 ## Uninstallation:
-* Open a Storage Extension Control Panel in the game.
-* Select the bottom item "Uninstall" and answer the following safety question with "Yes".
-* Wait until the script tells you that uninstallation has been completed.
-* Save.
-* Quit X3.
-* Remove all files of the script from the folders `scripts` and `t` (see "Used Resources")
-* Done.
+- Open a Storage Extension Control Panel in the game.
+- Select the bottom item "Uninstall" and answer the following safety question with "Yes".
+- Wait until the script tells you that uninstallation has been completed.
+- Save.
+- Quit X3.
+- Remove all files of the script from the folders `scripts` and `t` (see "Used Resources")
+- Done.
 
 ## Description:
 Fed up with the small cargo bays of your stations and complexes? It's over now! The Station Storage Extension facilitates automatic transfer of wares to and from docked ships that have been registered with the Extenstion.
@@ -41,35 +41,33 @@ The user interface of the Station Storage Extension should be quite intuitive to
 
 ## Used Resources:
 
-### Command Slot:
-`COMMAND_TYPE_STATION_35 (1135)`
+### Command Slot
+- `COMMAND_TYPE_STATION_35 (1135)`
 
-### Language Files: 
-`t\8223-L044.xml (page 8223)`
-`t\8223-L049.xml (page 8223)`
-
-`t\8910-L044.xml (page 8910)` <-------String Library by ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
-`t\8910-L049.xml (page 8910)` <-------String Library by ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
+### Language Files
+- `t\8223-L044.xml (page 8223)`
+- `t\8223-L049.xml (page 8223)`
+- `t\8910-L044.xml (page 8910)` <-------String Library by ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
+- `t\8910-L049.xml (page 8910)` <-------String Library by ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
 
 ### Script Files:
-`scripts\lib.chem.strings.xml` <-------String Library by ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
-
-`scripts\plugin.sse.consistency.check.xml`
-`scripts\plugin.sse.core.xml`
-`scripts\plugin.sse.find.ship.for.loading.xml`
-`scripts\plugin.sse.find.ship.for.unload.xml`
-`scripts\plugin.sse.get.ware.settings.xml`
-`scripts\plugin.sse.pref.usage.docked.xml`
-`scripts\plugin.sse.restart.core.xml`
-`scripts\plugin.sse.total.usage.docked.xml`
-`scripts\plugin.sse.ui.main.xml`
-`scripts\plugin.sse.ui.manage.ships.xml`
-`scripts\plugin.sse.ui.manage.wares.xml`
-`scripts\plugin.sse.ui.notifications.xml`
-`scripts\plugin.sse.ui.ware.select.ship.xml`
-`scripts\plugin.sse.ui.ware.settings.xml`
-`scripts\setup.plugin.sse.xml`
-`scripts\uninstall.plugin.sse.xml`
+- `scripts\lib.chem.strings.xml` <-------String Library by ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
+- `scripts\plugin.sse.consistency.check.xml`
+- `scripts\plugin.sse.core.xml`
+- `scripts\plugin.sse.find.ship.for.loading.xml`
+- `scripts\plugin.sse.find.ship.for.unload.xml`
+- `scripts\plugin.sse.get.ware.settings.xml`
+- `scripts\plugin.sse.pref.usage.docked.xml`
+- `scripts\plugin.sse.restart.core.xml`
+- `scripts\plugin.sse.total.usage.docked.xml`
+- `scripts\plugin.sse.ui.main.xml`
+- `scripts\plugin.sse.ui.manage.ships.xml`
+- `scripts\plugin.sse.ui.manage.wares.xml`
+- `scripts\plugin.sse.ui.notifications.xml`
+- `scripts\plugin.sse.ui.ware.select.ship.xml`
+- `scripts\plugin.sse.ui.ware.settings.xml`
+- `scripts\setup.plugin.sse.xml`
+- `scripts\uninstall.plugin.sse.xml`
 
 ## Changelog:
 

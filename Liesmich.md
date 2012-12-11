@@ -10,25 +10,25 @@ Die Stationslager-Erweiterung befindet sich unter den Stationskommandos. Man erk
 Korrespondierender Thread im Egosoft-Forum: [[SCR][13.03.2009] Stationslager-Erweiterung v beta.02](http://forum.egosoft.com/viewtopic.php?t=239411)
 
 ## Mindestvoraussetzungen:
-* Eine Station und ein angedocktes Schiff mit der Station als Heimatbasis.
+- Eine Station und ein angedocktes Schiff mit der Station als Heimatbasis.
 
 ## Installation:
-* Den Inhalt des Ordners `t` in den `X3 TC\t` Ordner kopieren
-* Den Inhalt des Ordners `scripts` in den `X3 TC\scripts` Ordner kopieren
+- Den Inhalt des Ordners `t` in den `X3 TC\t` Ordner kopieren
+- Den Inhalt des Ordners `scripts` in den `X3 TC\scripts` Ordner kopieren
 
 ## Update:
-* Den Inhalt des Ordners `t` in den `X3 TC\t` Ordner kopieren
-* Den Inhalt des Ordners `scripts` in den `X3 TC\scripts` Ordner kopieren
-* Im Spiel wird es nur eine Meldung geben, wenn das Skript gerade auf einer Station läuft und daher neu gestartet werden musste. Die aktuelle Version ist aber im Konfigurationspanel in der oberen rechten Ecke sichtbar. Hier könnt ihr also nachsehen, ob das Update geklappt hat.
+- Den Inhalt des Ordners `t` in den `X3 TC\t` Ordner kopieren
+- Den Inhalt des Ordners `scripts` in den `X3 TC\scripts` Ordner kopieren
+- Im Spiel wird es nur eine Meldung geben, wenn das Skript gerade auf einer Station läuft und daher neu gestartet werden musste. Die aktuelle Version ist aber im Konfigurationspanel in der oberen rechten Ecke sichtbar. Hier könnt ihr also nachsehen, ob das Update geklappt hat.
 
 ## Deinstallation:
-* Im Spiel ein Kontrollpanel der Stationslager-Erweiterung öffnen. (unter Stationskommandos)
-* Den untersten Menüpunkt "Deinstallieren" wählen und die sicherheitsabfrage mit "Ja" bestätigen.
-* Warten, bis die Deinstallation als erfolgreich gemeldet wurde.
-* Speichern.
-* X3 verlassen.
-* Alle zum Skript gehörigen Dateien aus den Ordnern `X3 TC\scripts` und `X3 TC\t` löschen (Siehe "Verwendete Ressourcen").
-* Fertig.
+- Im Spiel ein Kontrollpanel der Stationslager-Erweiterung öffnen. (unter Stationskommandos)
+- Den untersten Menüpunkt "Deinstallieren" wählen und die sicherheitsabfrage mit "Ja" bestätigen.
+- Warten, bis die Deinstallation als erfolgreich gemeldet wurde.
+- Speichern.
+- X3 verlassen.
+- Alle zum Skript gehörigen Dateien aus den Ordnern `X3 TC\scripts` und `X3 TC\t` löschen (Siehe "Verwendete Ressourcen").
+- Fertig.
 
 ## Beschreibung:
 Schon immer genervt, dass eine Station oder ein Komplex nur so wenig von ihren Produkten lagern kann? Jetzt ist es damit vorbei! Die Stationslager-Erweiterung ermöglicht den automatischen Transfer von Waren auf und von angedockten Schiffen, die explizit bei der Lagererweiterung registriert wurden. Die Einstellungen erlauben das setzen einer oberen und unteren Grenze, zwischen denen die Lagererweiterung den Lagerstand zu halten versucht. Überproduktionen werden in den Frachtraum der Erweiterungsschiffe ausgelagert und Mängel aus den ausgelagerten Waren ausgeglichen. Für jede von der Erweiterung verwaltete Ware kann man außerdem bevorzugte Schiffe wählen. Diese werden dann bei der Lagerung dieser Ware zuerst beladen und zuletzt wieder geleert.
@@ -40,35 +40,33 @@ Die Benutzung der Stationslager-Erweiterung sollte sehr intuitiv sein. Das Benut
 
 ## Verwendete Ressourcen:
 
-### Kommandoslot:
-`COMMAND_TYPE_STATION_35 (1135)`
+### Kommandoslot
+- `COMMAND_TYPE_STATION_35 (1135)`
 
-### Sprachdateien: 
-`t\8223-L044.xml (page 8223)`
-`t\8223-L049.xml (page 8223)`
-
-`t\8910-L044.xml (page 8910)` <-------String Library von ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
-`t\8910-L049.xml (page 8910)` <-------String Library von ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
+### Sprachdateien
+- `t\8223-L044.xml (page 8223)`
+- `t\8223-L049.xml (page 8223)`
+- `t\8910-L044.xml (page 8910)` <-------String Library von ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
+- `t\8910-L049.xml (page 8910)` <-------String Library von ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
 
 ### Skriptdateien:
-`scripts\lib.chem.strings.xml` <-------String Library von ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
-
-`scripts\plugin.sse.consistency.check.xml`
-`scripts\plugin.sse.core.xml`
-`scripts\plugin.sse.find.ship.for.loading.xml`
-`scripts\plugin.sse.find.ship.for.unload.xml`
-`scripts\plugin.sse.get.ware.settings.xml`
-`scripts\plugin.sse.pref.usage.docked.xml`
-`scripts\plugin.sse.restart.core.xml`
-`scripts\plugin.sse.total.usage.docked.xml`
-`scripts\plugin.sse.ui.main.xml`
-`scripts\plugin.sse.ui.manage.ships.xml`
-`scripts\plugin.sse.ui.manage.wares.xml`
-`scripts\plugin.sse.ui.notifications.xml`
-`scripts\plugin.sse.ui.ware.select.ship.xml`
-`scripts\plugin.sse.ui.ware.settings.xml`
-`scripts\setup.plugin.sse.xml`
-`scripts\uninstall.plugin.sse.xml`
+- `scripts\lib.chem.strings.xml` <-------String Library von ChemODur!! http://forum.egosoft.com/viewtopic.php?t=233377
+- `scripts\plugin.sse.consistency.check.xml`
+- `scripts\plugin.sse.core.xml`
+- `scripts\plugin.sse.find.ship.for.loading.xml`
+- `scripts\plugin.sse.find.ship.for.unload.xml`
+- `scripts\plugin.sse.get.ware.settings.xml`
+- `scripts\plugin.sse.pref.usage.docked.xml`
+- `scripts\plugin.sse.restart.core.xml`
+- `scripts\plugin.sse.total.usage.docked.xml`
+- `scripts\plugin.sse.ui.main.xml`
+- `scripts\plugin.sse.ui.manage.ships.xml`
+- `scripts\plugin.sse.ui.manage.wares.xml`
+- `scripts\plugin.sse.ui.notifications.xml`
+- `scripts\plugin.sse.ui.ware.select.ship.xml`
+- `scripts\plugin.sse.ui.ware.settings.xml`
+- `scripts\setup.plugin.sse.xml`
+- `scripts\uninstall.plugin.sse.xml`
 
 ## Changelog:
 
