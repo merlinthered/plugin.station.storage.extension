@@ -1,4 +1,4 @@
-# Stationslager-Erweiterung - by Tim-O
+# Stationslager-Erweiterung
 Station Storage Extension (SSE)
 
 ![Stationslager-Erweiterung](http://img3.imagebanana.com/img/cxjczx2c/sse.superfreighters.jpg)
